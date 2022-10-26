@@ -5,6 +5,7 @@
 <!-- Compiled and minified CSS -->
 <link rel="stylesheet" 
     href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <title>Eventos</title>
 </head>
 <body>
@@ -22,7 +23,8 @@
 			<th>Nome</th>
 			<th>Local</th>
 			<th>Data</th>
-			<th>Horario</th>
+			<th>Horário</th>
+			<th></th>
 		</tr>
 	</thead>
 	
@@ -33,6 +35,10 @@
 			<td th:text="${evento.local}">Clube</td>
 			<td th:text="${evento.data}">11/10/2022</td>
 			<td th:text="${evento.horario}">19h</td>
+			<td>
+				<a th:href="@{/eventos/{id}/selecionar(id=${evento.id})}"><i class="material-icons">edit</i></a>
+				<a th:href="@{/eventos/{id}/remover(id=${evento.id})}"><i class="material-icons">delete</i></a>
+			</td>
 		</tr>
 	</tbody>
 	
